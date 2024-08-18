@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos_css/style_pedidos.css">
+    <title>Formulario de Pedidos</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Hacer pedido</h1>
+        <form action="../registros_php/guardar_pedido.php" method="POST">
+            <label for="id_pedidos">id_pedido:</label>
+                <input type="number" id="id-pedidos" name="id_pedidos" required>
+    
+                <label for="id_sucursal">id_sucursal:</label>
+                <input type="number" id="id_sucursal" name="id_sucursal" required>
+
+                <label for="id_cliente">id_cliente:</label>
+                <input type="number" id="id_cliente" name="id_cliente">
+                <label for="metodo_de_pago">Metodo de Pago:</label>
+                <input type="text" id="metodo_de_pago" name="metodo_de_pago" required>
+                
+                <label for="fecha_de_pedido">fecha del pedido:</label>
+                <input type="date" id="fecha_de_pedido" name="fecha_de_pedido" required>
+                
+                <label for="estado_pedido">Estado del Pedido:</label>
+                <input type="text" id="estado_pedido" name="estado_pedido" required>
+                
+                <label for="id_productos">Id de producto:</label>
+                <input type="number" id="id_producto" name="id_producto" required>
+
+                <input type="submit" value="Guardar Empleados">
+        </form>
+    </div>
+
+</body>
+</html>
