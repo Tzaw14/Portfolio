@@ -5,8 +5,6 @@
 }
 
 :root {
-  --card-height: 550px;
-  --card-width: calc(var(--card-height) / 1.7);
   --primary-color: #3a2d6a;
   --secondary-color: #4a3f87;
   --background-color: #14131d;
@@ -15,9 +13,11 @@
   --highlight-color: #9b8dff;
   --border-color: #ff00f7;
   --shadow-color: rgba(255, 0, 247, 0.5);
+  --card-height: 50vh;
+  --card-width: 85vw;
 }
 
-.character img{
+.character img {
   border-radius: 30%;
 }
 
@@ -36,10 +36,8 @@ body {
 
 .acerca, .lenguajes, .proyectos {
   padding: 5px;
-  margin: auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  width: 65%;
+  margin: 2% auto;
+  width: 90%;
   border-radius: 8px;
   background-image: linear-gradient(
     var(--rotate),
@@ -49,15 +47,14 @@ body {
   color: var(--text-color);
 }
 
-.acerca{
+.acerca {
   align-items: center;
 }
 
-.detalles, .contacto{
+.detalles, .contacto {
   margin: auto;
   padding: 2.5%;
-  width: 400px;
-  max-width: 100%;
+  max-width: 90%;
   background-color: var(--card-bg-color);
   border: 2px solid var(--border-color);
   border-radius: 15px;
@@ -65,19 +62,18 @@ body {
   margin-bottom: 0.5%;
 }
 
-.contacto a{
+.contacto a {
   color: #f1f1f1;
 }
 
 .title-header {
   margin-top: 0.5%;
   padding: 20px;
-  font-size: 24px;
+  font-size: 5vw;
   font-weight: bold;
   color: var(--border-color);
   text-align: center;
   border-radius: 8px;
-  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -106,17 +102,18 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.acerca h1{
+.acerca h1 {
   color: #f1f1f1;
 }
 
-.acerca span{
+.acerca span {
   color: #d79ac9;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .acerca img {
-  width: 50px;
+  width: 20vw;
+  max-width: 100px;
 }
 
 .cards-container {
@@ -277,13 +274,12 @@ body {
 
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
 .proyecto {
-  width: 325px;
   border: 2px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
@@ -291,7 +287,6 @@ body {
   background-color: var(--card-bg-color);
   padding: 15px;
   text-align: center;
-  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -299,20 +294,19 @@ body {
   width: 100%;
   height: auto;
   border-bottom: 2px solid var(--border-color);
-  max-width: 600px;
-  max-height: 300px;
+  max-width: 100%;
   object-fit: cover;
 }
 
 .proyecto h3 {
   margin: 15px 0 10px;
-  font-size: 1.2em;
+  font-size: 1.5vw;
   color: #f1f1f1;
 }
 
 .proyecto p {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 1.2vw;
   color: var(--text-color);
 }
 
@@ -321,7 +315,7 @@ body {
   text-align: center;
 }
 
-.proyecto-buttons a{
+.proyecto-buttons a {
   color: #350000;
 }
 
@@ -343,11 +337,8 @@ body {
 }
 
 .lenguajes {
-  padding: 5px;
-  margin: auto;  
-  margin-top: 2%;
-  margin-bottom: 2%;
-  width: 65%;
+  width: 90%;
+  margin: 2% auto;
   border-radius: 8px;
   background-image: linear-gradient(
     var(--rotate),
@@ -358,7 +349,7 @@ body {
 
 .lenguajes-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
 }
@@ -373,6 +364,7 @@ body {
   padding: 15px;
   text-align: center;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .lenguaje h3 {
@@ -388,6 +380,16 @@ body {
 }
 
 /* Media Queries para hacer el sitio responsive */
+@media (max-width: 1024px) {
+  .title-header {
+    font-size: 3rem;
+  }
+
+  .proyectos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .acerca, .lenguajes, .proyectos {
     width: 90%;
@@ -423,5 +425,32 @@ body {
 
   .wrapper {
     height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-header {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .button {
+    padding: 8px 16px;
+  }
+
+  .proyecto h3, .proyecto p {
+    font-size: 1rem;
+  }
+
+  .lenguaje h3 {
+    font-size: 1rem;
+  }
+
+  .lenguaje p {
+    font-size: 0.8rem;
   }
 }
