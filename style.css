@@ -11,7 +11,7 @@
   --secondary-color: #4a3f87;
   --background-color: #14131d;
   --card-bg-color: #2d2a44;
-  --text-color: #00d9ff;
+  --text-color: #cadbff;
   --highlight-color: #9b8dff;
   --border-color: #ff00f7;
   --shadow-color: rgba(255, 0, 247, 0.4);
@@ -51,7 +51,6 @@ a:hover {
 .acerca, .lenguajes, .proyectos {
   padding: 20px;
   margin: 20px auto;
-  width: 90%;
   max-width: 1200px;
   border-radius: 12px;
   background-image: linear-gradient(
@@ -105,10 +104,11 @@ a:hover {
 
 .title-header h1, .title-header h3, .title-header h4 {
   margin-bottom: 10px;
+  color: #00d9ff;
 }
 
 .title-header h1 span {
-  background: linear-gradient(45deg, #ff00f7, #00d9ff, #9b8dff);
+  background: linear-gradient(0deg, #ff00f7, #910000, #ff00f7);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -118,6 +118,9 @@ a:hover {
 @keyframes gradient-flow {
   0% {
     background-position: 0%;
+  }
+  50% {
+    background-position: 50%;
   }
   100% {
     background-position: 100%;
@@ -151,11 +154,15 @@ a:hover {
 }
 
 .acerca h1{
-  color: #f1f1f1;
+  color: #00d9ff;
 }
 
 .acerca span{
-  color: #d79ac9;
+  background: linear-gradient(0deg, #c2a500, #ffffff, #c2a500);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-flow 4s linear infinite;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -214,7 +221,6 @@ a:hover {
 }
 
 .card::before {
-  background-color: #191c29;
   content: "";
   width: 104%;
   height: 102%;
@@ -227,7 +233,7 @@ a:hover {
   z-index: -1;
   top: -1%;
   left: -2%;
-  animation: spin 60s linear infinite;
+  animation: spin 10s linear infinite;
 }
 
 .card::after {
@@ -241,11 +247,11 @@ a:hover {
   transform: scale(0.8);
   background-image: linear-gradient(
     var(--rotate),
-    #8765ff, #1f00cf 43%, #3e2a6b
+    #ff6565 10%, #1f00cf 43%, #3e2a6b 100%
   );
   opacity: 1;
   transition: opacity 0.5s;
-  animation: spin 60s linear infinite;
+  animation: spin 10s linear infinite;
 }
 
 @keyframes spin {
@@ -279,7 +285,7 @@ a:hover {
   background-image: linear-gradient(
     to bottom,
     transparent 46%,
-    rgba(12, 13, 19, 0.5) 68%,
+    rgba(255, 255, 255, 0.5) 68%,
     rgba(12, 13, 19) 97%
   );
 }
@@ -330,7 +336,7 @@ a:hover {
 
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
   gap: 20px;
   padding: 20px;
 }
@@ -359,10 +365,14 @@ a:hover {
   object-fit: cover;
 }
 
+.proyectos h2 {
+  color: #008cff;
+}
+
 .proyecto h3 {
   margin: 15px 0 10px;
   font-size: 1.2em;
-  color: #f1f1f1;
+  color: #008cff;
 }
 
 .proyecto p {
@@ -397,12 +407,16 @@ a:hover {
   transform: scale(1.05);
 }
 
+.lenguajes h2{
+  color: #008cff;
+}
+
 .lenguajes {
   padding: 5px;
   margin: auto;  
   margin-top: 2%;
   margin-bottom: 2%;
-  width: 65%;
+  width: 80%;
   border-radius: 8px;
   background-image: linear-gradient(
     var(--rotate),
@@ -414,7 +428,7 @@ a:hover {
 
 .lenguajes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
 }
@@ -444,7 +458,7 @@ a:hover {
 
 .lenguaje h3 {
   margin: 10px 0;
-  color: var(--text-color);
+  color: #008cff;
 }
 
 .lenguaje p {
